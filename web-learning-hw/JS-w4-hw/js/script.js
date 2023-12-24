@@ -1,6 +1,6 @@
 /*Name this external file gallery.js*/
 function upDate(previewPic){
-   document.getElementById('image').innerHTML=previewPic.alt;
+   document.querySelector('#image').innerHTML=previewPic.alt;
    document.querySelector('#image').style.backgroundImage= "url('" +previewPic.src+"')";
  }
     
@@ -8,4 +8,10 @@ function upDate(previewPic){
   document.querySelector('#image').style.backgroundImage="url('')";
   document.querySelector('#image').innerHTML="Hover over an image over to display here.";
  }
-  
+
+function tabIndexer(){
+	let images = document.querySelectorAll(".preview");
+	for (let i = 0; i < images.length; i++) {
+		console.log("Image "+i)
+		images[i].setAttribute("tabindex","0")}
+  }
